@@ -1,0 +1,45 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    background-color: blanchedalmond;
+}
+
+body {
+    display: grid;
+}
+
+.boardContainer {
+    display: grid;
+    justify-items: center;
+    grid-template-columns: 1fr 1fr;
+    border: 2px solid black;
+}
+
+#playerBoard,
+#aiBoard {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: repeat(10, 1fr);
+    border: 1px solid red;
+    gap: 3px;
+    padding: 3px;
+}
+
+.o {
+    width: 29px;
+    height: 29px;
+    border: 1px solid blue;
+}
+
+.carrier,
+.battleship,
+.cruiser,
+.submarine,
+.destroyer {
+    width: 29px;
+    height: 29px;
+    border: 1px solid red;
+}
