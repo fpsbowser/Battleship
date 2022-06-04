@@ -1,4 +1,7 @@
+// import Dom from "./dom";
 import Ship from "./ship";
+import * as Dom from "./dom"
+
 
 function Gameboard() {
   return {
@@ -49,6 +52,21 @@ function Gameboard() {
         return false;
       }
     },
+    render: function(board) {
+      // render gameboard
+      this.clearUnitsForBoard(board)
+      for (let i = 0; i < this.gameboard.length; i++) {
+        const unit = document.createElement('div')
+        unit.className = `${this.gameboard[i]}`
+        board.appendChild(unit)
+        console.log(this.gameboard[i])
+      }
+    },
+    clearUnitsForBoard: function(board) {
+      while (board.firstChild) {
+        board.removeChild(board.firstChild)
+      }
+    }
   };
 }
 
