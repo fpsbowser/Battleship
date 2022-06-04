@@ -20,6 +20,4 @@ function Player() {
   };
 }
 
-let player1 = Player();
-
 export default Player;
