@@ -1,5 +1,6 @@
 function Ship(lengthOfShip, coordinates, isHorizontal, typeOfShip) {
     return {
+        name: typeOfShip,
         length: new Array(lengthOfShip).fill(typeOfShip),
         hits: new Array(lengthOfShip).fill(0),
         location: coordinates,
