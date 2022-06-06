@@ -6,11 +6,11 @@ import * as Dom from "./dom"
 function Gameboard() {
   return {
     gameboard: new Array(100).fill("o"),
-    carrier: new Ship(5, 42, true, "carrier"),
-    battleship: new Ship(4, 22, true, "battleship"),
-    cruiser: new Ship(3, 90, true, "cruiser"),
-    submarine: new Ship(3, 82, true, "submarine"),
-    destroyer: new Ship(2, 12, true, "destroyer"),
+    carrier: new Ship(5, 42, false, "carrier"),
+    battleship: new Ship(4, 26, false, "battleship"),
+    cruiser: new Ship(3, 94, true, "cruiser"),
+    submarine: new Ship(3, 76, true, "submarine"),
+    destroyer: new Ship(2, 12, false, "destroyer"),
     recieveAttack: function (coordinates) {
       if (coordinates < 0 || coordinates > 100) {
         throw "Invalid coordinate!";
@@ -37,7 +37,19 @@ function Gameboard() {
       let coordinates = ship.location;
       let unitsToRemove = ship.length.length;
       let unitsToAdd = ship.length;
-      this.gameboard.splice(coordinates, unitsToRemove, ...unitsToAdd);
+      
+      if (!ship.horizontal) {
+        // console.log('ship is vertical')
+        let skip = 10
+        // Place ship in gameboard array vertically
+        for (let i = 0; i < ship.length.length; i++) {
+          this.gameboard.splice(coordinates, 1, ship.name)
+          coordinates = coordinates + skip
+        }
+      } else {
+        this.gameboard.splice(coordinates, unitsToRemove, ...unitsToAdd);
+      }
+      
     },
     allShipsSunk: function () {
       if (
@@ -59,7 +71,7 @@ function Gameboard() {
         const unit = document.createElement('div')
         unit.className = `${this.gameboard[i]}`
         board.appendChild(unit)
-        console.log(this.gameboard[i])
+        // console.log(this.gameboard[i])
       }
     },
     clearUnitsForBoard: function(board) {

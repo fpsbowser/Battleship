@@ -6,6 +6,8 @@ import Player from "../player";
 import * as Dom from "../dom";
 
 Dom.startGameButton.addEventListener('click', () => {
+
+    // Start the game loop from the Game module
     const playerOne = new Player()
     console.log(playerOne.gameboard)
     playerOne.gameboard.insertShip(playerOne.gameboard.carrier)
@@ -23,8 +25,6 @@ Dom.startGameButton.addEventListener('click', () => {
     ai.gameboard.insertShip(ai.gameboard.submarine)
     ai.gameboard.insertShip(ai.gameboard.destroyer)
     ai.gameboard.render(Dom.aiBoardContainer)
-
-
 })
 
 
