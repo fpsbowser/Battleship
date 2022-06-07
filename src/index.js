@@ -1,32 +1,38 @@
 import Gameboard from "../gameboard";
 import Ship from "../ship";
 // import Dom from "../dom";
-import Game from "../game";
+// import Game from "../game";
+import * as Game from "../game"
 import Player from "../player";
 import * as Dom from "../dom";
 
 Dom.startGameButton.addEventListener('click', () => {
 
     // Start the game loop from the Game module
-    const playerOne = new Player()
-    console.log(playerOne.gameboard)
-    playerOne.gameboard.insertShip(playerOne.gameboard.carrier)
-    playerOne.gameboard.insertShip(playerOne.gameboard.battleship)
-    playerOne.gameboard.insertShip(playerOne.gameboard.cruiser)
-    playerOne.gameboard.insertShip(playerOne.gameboard.submarine)
-    playerOne.gameboard.insertShip(playerOne.gameboard.destroyer)
-    playerOne.gameboard.render(Dom.playerboardContainer)
+    // const playerOne = new Player()
+    // console.log(playerOne.gameboard)
+    // playerOne.gameboard.insertShip(playerOne.gameboard.carrier)
+    // playerOne.gameboard.insertShip(playerOne.gameboard.battleship)
+    // playerOne.gameboard.insertShip(playerOne.gameboard.cruiser)
+    // playerOne.gameboard.insertShip(playerOne.gameboard.submarine)
+    // playerOne.gameboard.insertShip(playerOne.gameboard.destroyer)
+    // playerOne.gameboard.render(Dom.playerboardContainer, 'unit')
 
-    const ai = new Player()
-    console.log(ai.gameboard)
-    ai.gameboard.insertShip(ai.gameboard.carrier)
-    ai.gameboard.insertShip(ai.gameboard.battleship)
-    ai.gameboard.insertShip(ai.gameboard.cruiser)
-    ai.gameboard.insertShip(ai.gameboard.submarine)
-    ai.gameboard.insertShip(ai.gameboard.destroyer)
-    ai.gameboard.render(Dom.aiBoardContainer)
+    // const ai = new Player()
+    // console.log(ai.gameboard)
+    // ai.gameboard.insertShip(ai.gameboard.carrier)
+    // ai.gameboard.insertShip(ai.gameboard.battleship)
+    // ai.gameboard.insertShip(ai.gameboard.cruiser)
+    // ai.gameboard.insertShip(ai.gameboard.submarine)
+    // ai.gameboard.insertShip(ai.gameboard.destroyer)
+    // ai.gameboard.render(Dom.aiBoardContainer, 'enemyUnit')
+
+    // Dom.giveUnitsEventListener()
+    Game.game()
 })
 
+// Dom.giveUnitsEventListener()
+// console.log(Dom.units)
 
 
 // const start = document.getElementById('start')
