@@ -3,6 +3,7 @@ import Ship from "./ship";
 import * as Dom from "./dom"
 
 
+
 function Gameboard() {
   return {
     gameboard: new Array(100).fill("o"),
@@ -39,7 +40,6 @@ function Gameboard() {
       let unitsToAdd = ship.length;
       
       if (!ship.horizontal) {
-        // console.log('ship is vertical')
         let skip = 10
         // Place ship in gameboard array vertically
         for (let i = 0; i < ship.length.length; i++) {
@@ -49,7 +49,6 @@ function Gameboard() {
       } else {
         this.gameboard.splice(coordinates, unitsToRemove, ...unitsToAdd);
       }
-      
     },
     allShipsSunk: function () {
       if (
@@ -64,12 +63,14 @@ function Gameboard() {
         return false;
       }
     },
-    render: function(board) {
+    render: function(board, id) {
       // render gameboard
       this.clearUnitsForBoard(board)
+
       for (let i = 0; i < this.gameboard.length; i++) {
         const unit = document.createElement('div')
         unit.className = `${this.gameboard[i]}`
+        unit.id = `${id}`
         board.appendChild(unit)
         // console.log(this.gameboard[i])
       }
