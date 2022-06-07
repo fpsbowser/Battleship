@@ -34,11 +34,27 @@ body {
     border: 1px solid blue;
 }
 
+.x {
+    width: 29px;
+    height: 29px;
+    border: 1px solid green;
+}
+
 .carrier,
 .battleship,
 .cruiser,
 .submarine,
 .destroyer {
+    width: 29px;
+    height: 29px;
+    border: 1px solid blue;
+}
+
+.carrierx,
+.battleshipx,
+.cruiserx,
+.submarinex,
+.destroyerx {
     width: 29px;
     height: 29px;
     border: 1px solid red;
