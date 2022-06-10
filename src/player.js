@@ -6,7 +6,6 @@ function Player() {
     movearray: [],
     aiMove: function () {
       let coordinate = Math.floor(Math.random() * 100);
-      // let moveArray = [];
       if (this.movearray.includes(coordinate)) {
         while (this.movearray.includes(coordinate)) {
           coordinate = Math.floor(Math.random() * 100);
