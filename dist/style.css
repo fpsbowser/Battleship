@@ -1,53 +1,161 @@
+@import url("https://fonts.googleapis.com/css2?family=Kdam+Thmor+Pro&display=swap");
+
 * {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 html {
-    background-color: blanchedalmond;
+  background-color: #efefef;
+  font-family: "Kdam Thmor Pro", sans-serif;
+}
+
+#header {
+  font-size: 4rem;
+  text-align: center;
+  color: #1f1f1f;
+}
+
+h2 {
+  font-size: 2.5rem;
+  color: #1f1f1f;
+  padding: 1rem;
 }
 
 body {
-    display: grid;
+  display: grid;
+  gap: 1rem;
+}
+
+.initialBoardContainer {
+  display: grid;
+  justify-items: center;
+  grid-template-columns: 1fr 1fr;
+  background-color: #a9a9a9;
+  border: 2px solid black;
+  padding: 2rem;
 }
 
 .boardContainer {
-    display: grid;
-    justify-items: center;
-    grid-template-columns: 1fr 1fr;
-    border: 2px solid black;
+  display: grid;
+  justify-items: center;
+  grid-template-columns: 1fr 1fr;
+  background-color: #a9a9a9;
+  border: 2px solid black;
+  padding: 2rem;
 }
 
 #playerBoard,
 #aiBoard {
-    display: grid;
-    grid-template-columns: repeat(10, 1fr);
-    grid-template-rows: repeat(10, 1fr);
-    border: 1px solid red;
-    gap: 3px;
-    padding: 3px;
-}
-
-.o {
-    width: 29px;
-    height: 29px;
-    border: 1px solid blue;
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  grid-template-rows: repeat(10, 1fr);
+  border: 2px solid black;
+  gap: 0.1rem;
+  padding: 0.5rem;
+  background-color: rgba(161, 213, 255, 0.699);
 }
 
 .x {
-    width: 29px;
-    height: 29px;
-    border: 1px solid green;
+  width: 29px;
+  height: 29px;
+  border: 3px solid green;
+  background-color: lightgreen;
+}
+
+.starter-carrier {
+  display: grid;
+  width: 29px;
+  height: 29px;
+  border: 3px solid black;
+  background-color: rgb(199, 132, 9);
+}
+
+.starter-battleship {
+  display: grid;
+  width: 29px;
+  height: 29px;
+  border: 3px solid black;
+  background-color: rgb(12, 78, 12);
+}
+
+.starter-cruiser {
+  display: grid;
+  width: 29px;
+  height: 29px;
+  border: 3px solid black;
+  background-color: rgb(187, 187, 14);
+}
+.starter-submarine {
+  display: grid;
+  width: 29px;
+  height: 29px;
+  border: 3px solid black;
+  background-color: rgb(46, 46, 126);
+}
+.starter-destroyer {
+  display: grid;
+  width: 29px;
+  height: 29px;
+  border: 3px solid black;
+  background-color: rgb(83, 10, 83);
+}
+
+.carrier-container,
+.battleship-container,
+.cruiser-container,
+.submarine-container,
+.destroyer-container {
+  display: grid;
+  gap: 0.1rem;
+  padding: 0.5rem;
+}
+
+.starter-carrier-placed {
+  display: grid;
+  width: 29px;
+  height: 29px;
+  border: 3px solid black;
+  background-color: rgb(199, 132, 9);
+}
+.starter-battleship-placed {
+  display: grid;
+  width: 29px;
+  height: 29px;
+  border: 3px solid black;
+  background-color: rgb(12, 78, 12);
+}
+.starter-cruiser-placed {
+  display: grid;
+  width: 29px;
+  height: 29px;
+  border: 3px solid black;
+  background-color: rgb(187, 187, 14);
+}
+.starter-submarine-placed {
+  display: grid;
+  width: 29px;
+  height: 29px;
+  border: 3px solid black;
+  background-color: rgb(46, 46, 126);
+}
+.starter-destroyer-placed {
+  display: grid;
+  width: 29px;
+  height: 29px;
+  border: 3px solid black;
+  background-color: rgb(83, 10, 83);
 }
 
 .carrier,
 .battleship,
 .cruiser,
 .submarine,
-.destroyer {
-    width: 29px;
-    height: 29px;
-    border: 1px solid blue;
+.destroyer,
+.o {
+  width: 29px;
+  height: 29px;
+  border: 3px solid blue;
 }
 
 .carrierx,
@@ -55,7 +163,78 @@ body {
 .cruiserx,
 .submarinex,
 .destroyerx {
-    width: 29px;
-    height: 29px;
-    border: 1px solid red;
+  width: 29px;
+  height: 29px;
+  border: 3px solid red;
+  background-color: lightcoral;
+}
+
+.draggableShips {
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  gap: 1rem;
+  grid-template-columns: 1fr 1fr 1fr;
+  padding: 0.5rem;
+  border: solid 2px black;
+  background-color: rgba(161, 213, 255, 0.699);
+}
+
+#button {
+  padding: 1rem 2rem;
+  margin-bottom: 1rem;
+  justify-self: center;
+}
+
+#starter-carrier-placed {
+  display: grid;
+  width: 29px;
+  height: 29px;
+  border: 3px solid black;
+  background-color: rgb(199, 132, 9);
+}
+#starter-battleship-placed {
+  display: grid;
+  width: 29px;
+  height: 29px;
+  border: 3px solid black;
+  background-color: rgb(12, 78, 12);
+}
+#starter-cruiser-placed {
+  display: grid;
+  width: 29px;
+  height: 29px;
+  border: 3px solid black;
+  background-color: rgb(187, 187, 14);
+}
+#starter-submarine-placed {
+  display: grid;
+  width: 29px;
+  height: 29px;
+  border: 3px solid black;
+  background-color: rgb(46, 46, 126);
+}
+#starter-destroyer-placed {
+  display: grid;
+  width: 29px;
+  height: 29px;
+  border: 3px solid black;
+  background-color: rgb(83, 10, 83);
+}
+
+.horizontal {
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  grid-template-columns: repeat(5, 1fr);
+}
+
+.horizontalContainer {
+  display: grid;
+  grid-template-columns: 1fr;
+  width: 272px;
+}
+
+.rotate-btn {
+  width: 5rem;
 }
