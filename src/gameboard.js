@@ -34,7 +34,6 @@ function Gameboard() {
       let coordinates = ship.location;
       let unitsToRemove = ship.length.length;
       let unitsToAdd = ship.length;
-
       if (!ship.horizontal) {
         let skip = 10;
         // Place ship in gameboard array vertically
@@ -59,7 +58,7 @@ function Gameboard() {
         return false;
       }
     },
-    render: function (board, id) {
+    render: function (board, id, player) {
       // render gameboard
       this.clearUnitsForBoard(board);
 
@@ -67,6 +66,9 @@ function Gameboard() {
         const unit = document.createElement("div");
         unit.className = `${this.gameboard[i]}`;
         unit.id = `${id}`;
+        if (player == true) {
+          unit.id = `starter-${this.gameboard[i]}-placed`;
+        }
         board.appendChild(unit);
         // console.log(this.gameboard[i])
       }
