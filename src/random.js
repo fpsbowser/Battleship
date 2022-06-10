@@ -34,7 +34,7 @@ aiTwo.gameboard.cruiser.location = 18;
 aiTwo.gameboard.cruiser.horizontal = false;
 aiTwo.gameboard.insertShip(aiTwo.gameboard.cruiser);
 
-aiTwo.gameboard.submarine.location = 31;
+aiTwo.gameboard.submarine.location = 30;
 aiTwo.gameboard.carrier.horizontal = false;
 aiTwo.gameboard.insertShip(aiTwo.gameboard.submarine);
 
@@ -89,7 +89,7 @@ aiFive.gameboard.carrier.location = 0;
 aiFive.gameboard.carrier.horizontal = true;
 aiFive.gameboard.insertShip(aiFive.gameboard.carrier);
 
-aiFive.gameboard.battleship.location = 12;
+aiFive.gameboard.battleship.location = 22;
 aiFive.gameboard.battleship.horizontal = false;
 aiFive.gameboard.insertShip(aiFive.gameboard.battleship);
 
@@ -97,7 +97,7 @@ aiFive.gameboard.cruiser.location = 36;
 aiFive.gameboard.cruiser.horizontal = false;
 aiFive.gameboard.insertShip(aiFive.gameboard.cruiser);
 
-aiFive.gameboard.submarine.location = 58;
+aiFive.gameboard.submarine.location = 70;
 aiFive.gameboard.carrier.horizontal = true;
 aiFive.gameboard.insertShip(aiFive.gameboard.submarine);
 
